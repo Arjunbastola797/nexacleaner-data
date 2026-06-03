@@ -1,0 +1,25 @@
+{
+  "appId": "com.nexacleaner.pro",
+  "appName": "NexaCleaner Pro",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#07070f",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "dark",
+      "backgroundColor": "#07070f"
+    }
+  },
+  "ios": {
+    "scheme": "NexaCleaner Pro",
+    "backgroundColor": "#07070f",
+    "contentInset": "automatic",
+    "preferredContentMode": "mobile"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "nexacleaner",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron .",
+    "go": "npm run build && electron .",
+    "dist:mac": "npm run build && electron-builder --mac --publish never",
+    "ios:sync": "npm run build && npx cap sync ios",
+    "ios:open": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/device": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^5.4.2"
+  },
+  "build": {
+    "appId": "com.nexacleaner.pro",
+    "productName": "NexaCleaner Pro",
+    "copyright": "Copyright © 2024 NexaCleaner",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [{ "target": "dmg", "arch": ["universal"] }],
+      "icon": "assets/icon.png",
+      "darkModeSupport": true,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "NexaCleaner Pro",
+      "iconSize": 80,
+      "window": { "width": 560, "height": 380 }
+    },
+    "files": [
+      "app-dist/**/*",
+      "main.js",
+      "preload.js",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    }
+  }
+}
